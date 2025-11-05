@@ -1,5 +1,8 @@
-# auto-bspwm
+# auto-bspwm-with-cursor
 > This is a Bash script that automates the setup of a professional hacking environment for Kali Linux using the tiled window manager [bspwm](https://github.com/baskerville/bspwm).
+
+## About This Project
+This project is based on the original [auto-bspwm](https://github.com/r1vs3c/auto-bspwm) by [r1vs3c](https://github.com/r1vs3c). The only modification made to the original project was adding cursor visibility configuration for users accustomed to working with a visible cursor in their desktop environment.
 
 ## Installation
 1. Install available updates.
@@ -109,5 +112,6 @@ This configuration uses the following software:
 - **Screenshot**: [flameshot](https://flameshot.org/)
 
 ## Credits
+- This project is inspired by the work of [r1vs3c](https://github.com/r1vs3c) from the [auto-bspwm](https://github.com/r1vs3c/auto-bspwm) project.
 - This environment has been inspired by the functionalities of [S4vitar's](https://github.com/s4vitar) environment.
 - Thanks to [Cube](https://github.com/ZLCube) for their contribution to the creation of the `archkali.png` wallpaper.
