@@ -47,7 +47,7 @@ else
 	sleep 1
 	echo -e "\n\n${blueColour}[*] Installing necessary packages for the environment...\n${endColour}"
 	sleep 2
-	sudo apt install -y kitty rofi feh xclip ranger i3lock-fancy scrot scrub wmname imagemagick cmatrix htop fastfetch python3-pip procps tty-clock fzf lsd bat pamixer flameshot
+	sudo apt install -y kitty rofi feh xclip ranger i3lock-fancy scrot scrub wmname imagemagick cmatrix htop fastfetch python3-pip procps tty-clock fzf lsd bat pamixer flameshot adwaita-icon-theme xcursor-themes x11-xserver-utils xserver-xorg-input-all
 	if [ $? != 0 ] && [ $? != 130 ]; then
 		echo -e "\n${redColour}[-] Failed to install some packages!\n${endColour}"
 		exit 1
@@ -231,10 +231,22 @@ else
 	echo -e "\n${greenColour}[+] Done\n${endColour}"
 	sleep 1.5
 
+	echo -e "\n${purpleColour}[*] Configuring X11 resources and cursor settings...\n${endColour}"
+	sleep 2
+	cp -v $dir/.Xresources ~/.Xresources
+	cp -v $dir/.xprofile ~/.xprofile
+	chmod +x ~/.xprofile
+	sudo ln -sfv ~/.Xresources /root/.Xresources
+	sudo ln -sfv ~/.xprofile /root/.xprofile
+	echo -e "\n${greenColour}[+] Done\n${endColour}"
+	sleep 1.5
+
 	echo -e "\n${purpleColour}[*] Configuring scripts...\n${endColour}"
 	sleep 2
 	sudo cp -v $dir/scripts/whichSystem.py /usr/local/bin/
 	cp -rv $dir/scripts/*.sh ~/.config/polybar/shapes/scripts/
+	cp -v $dir/scripts/fix_cursor.sh ~/fix_cursor.sh
+	chmod +x ~/fix_cursor.sh
 	touch ~/.config/polybar/shapes/scripts/target
 	echo -e "\n${greenColour}[+] Done\n${endColour}"
 	sleep 1.5
@@ -262,6 +274,9 @@ else
 	sleep 1.5
 
 	echo -e "\n${greenColour}[+] Environment configured :D\n${endColour}"
+	echo -e "\n${blueColour}[*] Cursor visibility fix has been included in the installation.\n${endColour}"
+	echo -e "${yellowColour}[?] If you experience cursor visibility issues after reboot, run: ./fix_cursor.sh\n${endColour}"
+	echo -e "${yellowColour}[?] More information available in CURSOR_FIX.md\n${endColour}"
 	sleep 1.5
 
 	while true; do

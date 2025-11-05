@@ -1,0 +1,19 @@
+! X11 cursor configuration
+Xcursor.theme: Adwaita
+Xcursor.size: 16
+
+! Font configuration
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.rgba: rgb
+
+! Rofi configuration
+rofi.font: Iosevka Nerd Font 12
+rofi.modi: run,drun,window
+rofi.show-icons: true
+rofi.drun-display-format: {name}
+
+! Additional cursor settings
+Xcursor.path: ~/.icons:/usr/share/icons:/usr/share/pixmaps

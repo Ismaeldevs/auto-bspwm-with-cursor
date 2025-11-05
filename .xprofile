@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# Load X resources
+xrdb -merge ~/.Xresources
+
+# Set cursor theme
+export XCURSOR_THEME=Adwaita
+export XCURSOR_SIZE=16
+
+# Ensure cursor is visible
+xsetroot -cursor_name left_ptr
+
+# Set desktop background
+feh --bg-fill ~/Wallpapers/archkali.png &
+
+# Start compositor
+picom --config ~/.config/picom/picom.conf &
+
+# Start polybar
+~/.config/polybar/./launch.sh --shapes &

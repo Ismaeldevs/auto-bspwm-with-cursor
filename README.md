@@ -30,6 +30,13 @@ chmod +x setup.sh
 
 5. After the script has finished, you will be prompted to restart the system. Once you have rebooted, select `bspwm` as the window manager and then log in.
 
+## Cursor Visibility Fix
+
+If you experience cursor visibility issues after installation, this has been addressed with:
+- Automatic cursor configuration during installation
+- Manual fix script: `./fix_cursor.sh`
+- Detailed troubleshooting guide: `CURSOR_FIX.md`
+
 ## Overview of the environment
 ![overview1](/assets/overview1.png "overview1")
 
