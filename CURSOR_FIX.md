@@ -1,72 +1,72 @@
-# Solución para problemas de visualización del cursor
+# Cursor Visibility Issues Solution
 
-Si después de instalar el entorno bspwm el cursor no es visible, puedes seguir estos pasos para solucionarlo:
+If after installing the bspwm environment the cursor is not visible, you can follow these steps to fix it:
 
-## Solución automática
+## Automatic Solution
 
-Ejecuta el script de reparación del cursor:
+Run the cursor fix script:
 
 ```bash
 ./fix_cursor.sh
 ```
 
-## Solución manual
+## Manual Solution
 
-1. **Instalar temas de cursor** (si no están instalados):
+1. **Install cursor themes** (if not already installed):
 ```bash
 sudo apt install -y adwaita-icon-theme xcursor-themes x11-xserver-utils xserver-xorg-input-all
 ```
 
-2. **Configurar variables de entorno**:
+2. **Configure environment variables**:
 ```bash
 export XCURSOR_THEME=Adwaita
 export XCURSOR_SIZE=16
 ```
 
-3. **Cargar recursos de X11**:
+3. **Load X11 resources**:
 ```bash
 xrdb -merge ~/.Xresources
 ```
 
-4. **Establecer cursor del root window**:
+4. **Set root window cursor**:
 ```bash
 xsetroot -cursor_name left_ptr
 ```
 
-5. **Reiniciar picom**:
+5. **Restart picom**:
 ```bash
 pkill picom
 picom --config ~/.config/picom/picom.conf &
 ```
 
-## Configuración permanente
+## Permanent Configuration
 
-Los archivos que se han agregado/modificado para solucionar este problema:
+The files that have been added/modified to solve this problem:
 
-- `.Xresources`: Configuración del tema y tamaño del cursor
-- `.xprofile`: Script que se ejecuta al iniciar X11
-- `config/bspwm/bspwmrc`: Configuración del cursor en bspwm
-- `config/picom/picom.conf`: Configuración mejorada del compositor
-- `scripts/fix_cursor.sh`: Script de reparación del cursor
+- `.Xresources`: Cursor theme and size configuration
+- `.xprofile`: Script that runs when X11 starts
+- `config/bspwm/bspwmrc`: Cursor configuration in bspwm
+- `config/picom/picom.conf`: Enhanced compositor configuration
+- `scripts/fix_cursor.sh`: Cursor repair script
 
-## Problemas persistentes
+## Persistent Issues
 
-Si el cursor sigue sin ser visible después de estos pasos:
+If the cursor is still not visible after these steps:
 
-1. Reinicia el sistema completamente
-2. Verifica que estés usando el gestor de pantalla correcto (lightdm, gdm, etc.)
-3. Asegúrate de seleccionar bspwm en el menú de sesión del gestor de pantalla
+1. Restart the system completely
+2. Verify that you are using the correct display manager (lightdm, gdm, etc.)
+3. Make sure to select bspwm in the session menu of the display manager
 
-## Verificación
+## Verification
 
-Para verificar que el cursor está configurado correctamente:
+To verify that the cursor is configured correctly:
 
 ```bash
 echo $XCURSOR_THEME
 echo $XCURSOR_SIZE
 ```
 
-Deberías ver:
+You should see:
 ```
 Adwaita
 16
