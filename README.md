@@ -15,8 +15,8 @@ sudo apt upgrade -y
 2. Clone the repository and navigate to it.
 
 ```shell
-git clone https://github.com/r1vs3c/auto-bspwm.git
-cd auto-bspwm
+git clone https://github.com/Ismaeldevs/auto-bspwm-with-cursor.git
+cd auto-bspwm-with-cursor
 ```
 
 3. Grant execution permissions to the script.
