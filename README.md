@@ -1,4 +1,4 @@
-# auto-bspwm
+# auto-bspwm-with-cursor
 > This is a Bash script that automates the setup of a professional hacking environment for Kali Linux using the tiled window manager [bspwm](https://github.com/baskerville/bspwm).
 
 ## Installation
