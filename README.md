@@ -110,6 +110,8 @@ This configuration uses the following software:
 - **Terminals**: [kitty](https://sw.kovidgoyal.net/kitty/) and [qterminal](https://github.com/lxqt/qterminal)
 - **Static Wallpaper**: [feh](https://github.com/derf/feh)
 - **Screenshot**: [flameshot](https://flameshot.org/)
+- **Cursor Theme**: [adwaita-icon-theme](https://gitlab.gnome.org/GNOME/adwaita-icon-theme) and [xcursor-themes](https://github.com/freedesktop/xcursor-themes)
+- **X11 Utilities**: [x11-xserver-utils](https://gitlab.freedesktop.org/xorg/app/xserver-utils) and [xserver-xorg-input-all](https://packages.debian.org/stable/xserver-xorg-input-all)
 
 ## Credits
 - This project is inspired by the work of [r1vs3c](https://github.com/r1vs3c) from the [auto-bspwm](https://github.com/r1vs3c/auto-bspwm) project.
